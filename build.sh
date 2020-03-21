@@ -27,7 +27,10 @@ function tune_function {
 
   if ((optimalPower != memorySize)); then
     echo "updating function memory size to $optimalPower..."
-    aws lambda update-function-configuration --region $1 --function-name $functionName --memory-size $optimalPower > /dev/null
+    aws lambda update-function-configuration \
+      --region $1 \
+      --function-name $functionName \
+      --memory-size $optimalPower > /dev/null
   fi
 
   echo ""
