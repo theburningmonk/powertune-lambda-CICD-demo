@@ -4,7 +4,7 @@ jobs:
   deploy-dev:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/
+    working_directory: ~/repo
 
     steps:
       - checkout
@@ -12,6 +12,7 @@ jobs:
       - run: unzip awscliv2.zip
       - run: sudo ./aws/install
       - run: sudo apt-get install jq
+      - run: cd repo
       - run: ./build deploy dev us-east-1
       - run: ./build tune dev us-east-1 balanced
 
