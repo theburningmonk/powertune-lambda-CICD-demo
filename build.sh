@@ -7,24 +7,31 @@ INSTRUCTION="If you want to deploy, try running the script with 'deploy stage re
 function tune_function {
   functionName=powertune-lambda-cicd-demo-$2-$3
 
+  echo ""
+  echo "$functionName:"
+  echo ""
+  echo "running 'lumigo-cli powertune-lambda'..."
   lumigo-cli powertune-lambda \
     -r $1 \
     -n $functionName \
     -s $4 \
     -f examples/$3.json \
     -o $3-result.json \
-    -z
+    -z > /dev/null
 
   optimalPower=`cat $3-result.json | jq -r '.power'`
-  echo "optimal power for $3 function is $optimalPower MB"
+  echo "optimal power for is $optimalPower MB"
 
   memorySize=`aws lambda get-function-configuration --region $1 --function-name $functionName | jq -r '.MemorySize'`
-  echo "current memory size for $3 function is $memorySize MB"
+  echo "current memory size is $memorySize MB"
 
   if ((optimalPower != memorySize)); then
     echo "updating function memory size to $optimalPower..."
-    aws lambda update-function-configuration --region $1 --function-name $functionName --memory-size $optimalPower
+    aws lambda update-function-configuration --region $1 --function-name $functionName --memory-size $optimalPower > /dev/null
   fi
+
+  echo ""
+  echo "-----------------------------"
 }
 
 if [ $# -eq 0 ]; then
