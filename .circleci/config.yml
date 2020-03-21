@@ -13,7 +13,7 @@ anchors:
 jobs:
   deploy-dev:
     docker:
-      - image: nikolaik/python-nodejs:latest
+      - image: nikolaik/python3.8-nodejs12
     working_directory: ~/repo
 
     steps:
