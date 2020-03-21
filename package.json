@@ -1,0 +1,25 @@
+{
+  "name": "powertune-lambda-cicd-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Demo of how to run powertune-lambda with lumigo-cli to auto-tune functions as part of CI/CD pipelines",
+  "scripts": {
+    "sls": "serverless"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theburningmonk/powertune-lambda-CICD-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theburningmonk/powertune-lambda-CICD-demo/issues"
+  },
+  "homepage": "https://github.com/theburningmonk/powertune-lambda-CICD-demo#readme",
+  "devDependencies": {
+    "serverless": "^1.67.0",
+    "serverless-lumigo": "^1.8.0"
+  },
+  "dependencies": {}
+}

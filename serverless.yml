@@ -1,0 +1,28 @@
+service: powertune-lambda-cicd-demo
+
+# uncomment to use Lumigo to inspect the function inputs, etc.
+# plugins:
+#   - serverless-lumigo
+# 
+# custom:
+#   lumigo:
+#     token: ${env:LUMIGO_TOKEN}
+#     nodePackageManager: npm
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  cpu-intense:
+    handler: functions/cpu-intense.handler
+
+  io-intense:
+    handler: functions/io-intense.handler
+    events:
+      - http:
+          path: /
+          method: POST
+
+  mixed:
+    handler: functions/mixed.handler

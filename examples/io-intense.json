@@ -1,0 +1,29 @@
+{
+  "resource": "/",
+  "path": "/",
+  "httpMethod": "POST",
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Accept-Language": "en-US,en;q=0.9,zh-TW;q=0.8,zh;q=0.7,zh-CN;q=0.6,it;q=0.5",
+    "cache-control": "no-cache",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "NL",
+    "content-type": "application/json",
+    "Host": "hy778cvm2l.execute-api.us-east-1.amazonaws.com",
+    "origin": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+    "postman-token": "bc970d17-a552-7892-84d0-7ca45c749807",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "none",
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36",
+    "Via": "2.0 ab1d15e056bdcedbea349504173a4ecb.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "Xxkk3O7oOZo0dhLdyjPhu9JLOnLuvbOcDIMn9vfhDk8a8YR-5kGleQ==",
+    "X-Amzn-Trace-Id": "Roo...[too long]"
+  },
+  "body": "{\"url\":\"https://theburningmonk.thinkific.com/courses/learn-you-some-lambda\"}"
+}

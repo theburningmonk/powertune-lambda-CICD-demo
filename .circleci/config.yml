@@ -1,0 +1,33 @@
+version: 2
+
+anchors:
+  - &INSTALL-AWSCLI
+    run:
+      name: Install awscli
+      command: sudo pip install awscli
+  - &INSTALL-JQ
+    run:
+      name: Install jq
+      command: sudo apt-get install jq
+
+jobs:
+  deploy-dev:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - <<: *INSTALL-AWSCLI
+      - <<: *INSTALL-JQ
+      - run: ./build deploy dev us-east-1
+      - run: ./build tune dev us-east-1 balanced
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy-dev:
+          filters:
+            branches:
+              only: master
