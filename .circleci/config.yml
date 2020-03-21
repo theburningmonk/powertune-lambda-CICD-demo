@@ -11,6 +11,7 @@ jobs:
       - run: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       - run: unzip awscliv2.zip
       - run: sudo ./aws/install
+      - run: sudo apt-get install -yy less # required by aws cli v2
       - run: sudo apt-get install jq
       - run: sudo npm i -g lumigo-cli
       - run: ./build.sh deploy dev us-east-1
