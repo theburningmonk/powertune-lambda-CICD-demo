@@ -4,7 +4,10 @@ anchors:
   - &INSTALL-AWSCLI
     run:
       name: Install awscli
-      command: sudo pip install awscli
+      command: 
+        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        unzip awscliv2.zip
+        sudo ./aws/install
   - &INSTALL-JQ
     run:
       name: Install jq
@@ -13,7 +16,7 @@ anchors:
 jobs:
   deploy-dev:
     docker:
-      - image: nikolaik/python3.8-nodejs12
+      - image: circleci/node:latest
     working_directory: ~/repo
 
     steps:
