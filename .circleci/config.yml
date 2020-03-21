@@ -12,6 +12,7 @@ jobs:
       - run: unzip awscliv2.zip
       - run: sudo ./aws/install
       - run: sudo apt-get install jq
+      - run: sudo npm i -g lumigo-cli
       - run: ./build.sh deploy dev us-east-1
       - run: ./build.sh tune dev us-east-1 balanced
 

@@ -42,8 +42,6 @@ elif [ "$1" = "tune" ] && [ $# -eq 4 ]; then
   STAGE=$2
   REGION=$3
   STRATEGY=$4
-
-  npm i -g lumigo-cli
   
   tune_function $REGION $STAGE "cpu-intense" "balanced"
   tune_function $REGION $STAGE "io-intense" "balanced"
