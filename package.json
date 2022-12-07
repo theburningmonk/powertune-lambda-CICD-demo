@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/theburningmonk/powertune-lambda-CICD-demo#readme",
   "devDependencies": {
-    "serverless": "^1.67.0",
+    "serverless": "^3.25.1",
     "serverless-lumigo": "^1.8.0"
   },
   "dependencies": {}
